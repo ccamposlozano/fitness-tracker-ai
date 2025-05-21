@@ -6,7 +6,7 @@ import { cn } from '../lib/utils';
 export function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
     logout();
@@ -19,10 +19,10 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="border-b bg-background">
+    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -38,18 +38,13 @@ export function Navbar() {
               </Link>
             ))}
           </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-muted-foreground">
-              {user?.email}
-            </span>
-            <Button
-              variant="ghost"
-              onClick={handleLogout}
-              className="text-sm font-medium"
-            >
-              Logout
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            onClick={handleLogout}
+            className="text-sm font-medium"
+          >
+            Logout
+          </Button>
         </div>
       </div>
     </nav>

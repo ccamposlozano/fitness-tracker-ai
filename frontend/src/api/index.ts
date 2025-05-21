@@ -65,10 +65,10 @@ interface RawFoodItem {
   fat: number | string;
 }
 
-
 export interface LoggedFood extends FoodItem {
   id: string;
   logged_at: string;
+  grams: number;
 }
 
 export const getLoggedFoods = async (): Promise<LoggedFood[]> => {
@@ -87,15 +87,32 @@ export const searchFoods = async (query: string): Promise<FoodItem[]> => {
   }));
 };
 
-export const logFood = async (food: FoodItem): Promise<void> => {
+export const logFood = async (food: FoodItem, grams: number = 100): Promise<void> => {
   const cleaned = {
     food_name: food.food_name,
-    calories: parseFloat(String(food.calories)),
-    protein: parseFloat(String(food.protein)),
-    carbs: parseFloat(String(food.carbs)),
-    fat: parseFloat(String(food.fat)),
+    calories: (parseFloat(String(food.calories)) * grams) / 100,
+    protein: (parseFloat(String(food.protein)) * grams) / 100,
+    carbs: (parseFloat(String(food.carbs)) * grams) / 100,
+    fat: (parseFloat(String(food.fat)) * grams) / 100,
+    grams: grams,
   };
 
-  console.log("Sending payload to /api/food-log:", cleaned);
   await api.post('/api/food-log', cleaned);
+};
+
+export const updateFoodLog = async (id: string, food: FoodItem, grams: number): Promise<void> => {
+  const cleaned = {
+    food_name: food.food_name,
+    calories: (parseFloat(String(food.calories)) * grams) / 100,
+    protein: (parseFloat(String(food.protein)) * grams) / 100,
+    carbs: (parseFloat(String(food.carbs)) * grams) / 100,
+    fat: (parseFloat(String(food.fat)) * grams) / 100,
+    grams: grams,
+  };
+
+  await api.put(`/api/food-log/${id}`, cleaned);
+};
+
+export const deleteFoodLog = async (id: string): Promise<void> => {
+  await api.delete(`/api/food-log/${id}`);
 }; 
