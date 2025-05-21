@@ -18,7 +18,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu";
-import { format } from 'date-fns';
+import { format, isToday as dateFnsIsToday } from 'date-fns';
+
+// Helper function to check if a timestamp is from today
+const isToday = (timestamp: string): boolean => {
+  const date = new Date(timestamp);
+  return dateFnsIsToday(date);
+};
 
 export const FoodLog = () => {
   const { user } = useAuth();
@@ -52,7 +58,8 @@ export const FoodLog = () => {
   }, []);
 
   useEffect(() => {
-    const newTotals = loggedFoods.reduce(
+    const todaysEntries = loggedFoods.filter(food => isToday(food.logged_at));
+    const newTotals = todaysEntries.reduce(
       (acc, food) => ({
         calories: acc.calories + food.calories,
         protein: acc.protein + food.protein,
@@ -339,12 +346,12 @@ export const FoodLog = () => {
       {/* Logged Foods Section */}
       <Card className="bg-gray-800 border-none">
         <CardHeader>
-          <h2 className="text-xl font-semibold text-white">Logged Foods</h2>
+          <h2 className="text-xl font-semibold text-white">Today's Logged Foods</h2>
         </CardHeader>
         <CardContent>
-          {loggedFoods.length > 0 ? (
+          {loggedFoods.filter(food => isToday(food.logged_at)).length > 0 ? (
             <div className="space-y-4">
-              {loggedFoods.map((food) => (
+              {loggedFoods.filter(food => isToday(food.logged_at)).map((food) => (
                 <Card key={food.id} className="bg-gray-700 border-none">
                   <CardContent className="p-4">
                     <div className="flex justify-between items-center">
