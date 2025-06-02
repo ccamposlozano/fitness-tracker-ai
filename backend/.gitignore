@@ -1,0 +1,24 @@
+# Data
+/backend/app/data/*.XPT
+/backend/app/data/*.csv
+
+# Database
+/backend/app/fitness.db
+
+# ML Models
+/backend/app/model/*.pkl
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Envs
+.env
+venv/
+env/
+
+# VS Code project files
+.vscode/
+
+# Node (frontend)
+frontend/node_modules/
