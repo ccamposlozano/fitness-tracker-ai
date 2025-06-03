@@ -21,7 +21,13 @@ df_clean = df[['RIDAGEYR', 'RIAGENDR', 'BMXWT', 'BMXHT',
 # Drop rows with missing values
 df_clean = df_clean.dropna()
 
+# 🔍 Filter extreme calorie values (keep between 1000 and 4500)
+df_clean = df_clean[
+    (df_clean['DR1TKCAL'] >= 1000) &
+    (df_clean['DR1TKCAL'] <= 4500)
+]
+
 # Save final clean dataset
 df_clean.to_csv(save_path, index=False)
 
-print(f"✅ Cleaned data saved to: {save_path}")
+print(f"✅ Cleaned and filtered data saved to: {save_path}")
