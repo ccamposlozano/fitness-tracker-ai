@@ -22,3 +22,6 @@ env/
 
 # Node (frontend)
 frontend/node_modules/
+
+scripts/outputs/
+
