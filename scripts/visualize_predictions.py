@@ -22,7 +22,7 @@ OUTPUT_PATH = os.path.join(OUTPUT_DIR, OUTPUT_FILENAME)
 df = pd.read_csv(DATA_PATH)
 
 # Features and target
-X = df[['RIDAGEYR', 'RIAGENDR', 'BMXWT', 'BMXHT']]
+X = df[['RIDAGEYR', 'RIAGENDR', 'BMXWT', 'BMXHT', 'PAD615', 'PAD645', 'PAD680']]
 y = df[['DR1TKCAL']]
 
 # Train/test split

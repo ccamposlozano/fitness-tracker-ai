@@ -2,6 +2,19 @@
 
 ## 2025-06-03
 
+### 🔬 Model Experimentation – Physical Activity Features
+
+- Added physical activity variables (`PAD615`, `PAD645`, `PAD680`) from `PAQ_J.XPT` to the cleaned NHANES dataset
+- Updated `clean_nhanes.py` to merge and filter these activity features
+- Modified `train_model.py` to include these features in the input matrix
+- Tuned `HistGradientBoostingRegressor` with GridSearchCV over `learning_rate`, `max_iter`, and `max_depth`
+- Result:
+  - R² Score: -0.03
+  - Cross-Validated R²: -0.01
+  - MSE: 175,726
+  - Best Params: `{'learning_rate': 0.01, 'max_depth': 3, 'max_iter': 100}`
+- Conclusion: Activity features degraded performance in current configuration, likely due to noise or weak correlation with dietary intake
+
 ### 🧠 Backend (ML)
 - Replaced `RandomForestRegressor` with `HistGradientBoostingRegressor` to simplify pipeline and reduce overfitting risk
 - Removed log-transform from calorie target after visualizing mild skew in distribution

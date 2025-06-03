@@ -10,24 +10,27 @@ save_path = os.path.join(base_dir, '../backend/app/data/nhanes_cleaned.csv')
 demo = pd.read_sas(os.path.join(raw_dir, 'DEMO_J.XPT'))
 bmx = pd.read_sas(os.path.join(raw_dir, 'BMX_J.XPT'))
 diet = pd.read_sas(os.path.join(raw_dir, 'DR1TOT_J.XPT'))
+paq = pd.read_sas(os.path.join(raw_dir, 'PAQ_J.XPT'))
 
-# Merge by SEQN (participant ID)
-df = demo.merge(bmx, on='SEQN').merge(diet, on='SEQN')
+# Merge relevant tables
+df = demo.merge(bmx, on='SEQN') \
+         .merge(diet, on='SEQN') \
+         .merge(paq[['SEQN', 'PAD615', 'PAD645', 'PAD680']], on='SEQN')  # Activity mins + sedentary time
 
-# Select relevant features
+# Select features
 df_clean = df[['RIDAGEYR', 'RIAGENDR', 'BMXWT', 'BMXHT',
+               'PAD615', 'PAD645', 'PAD680',  # Activity features
                'DR1TKCAL', 'DR1TPROT', 'DR1TCARB', 'DR1TTFAT']]
 
 # Drop rows with missing values
 df_clean = df_clean.dropna()
 
-# 🔍 Filter extreme calorie values (keep between 1000 and 4500)
+# Filter unrealistic calorie values
 df_clean = df_clean[
     (df_clean['DR1TKCAL'] >= 1000) &
     (df_clean['DR1TKCAL'] <= 4500)
 ]
 
-# Save final clean dataset
+# Save cleaned dataset
 df_clean.to_csv(save_path, index=False)
-
 print(f"✅ Cleaned and filtered data saved to: {save_path}")
