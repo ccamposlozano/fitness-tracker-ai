@@ -3,6 +3,17 @@
 ## 2025-06-03
 
 ### 🧠 Backend (ML)
+- Replaced `RandomForestRegressor` with `HistGradientBoostingRegressor` to simplify pipeline and reduce overfitting risk
+- Removed log-transform from calorie target after visualizing mild skew in distribution
+- Used default parameters and 4 demographic/body measurement features (age, gender, height, weight)
+- Evaluation:
+  - R² Score: 0.06
+  - Cross-Validated R²: 0.06
+  - MSE: 145,209
+- Visualized predicted vs actual calories as scatter plot
+
+
+### 🧠 Backend (ML)
 - Tried log-transforming calorie predictions — did not improve performance (R² dropped slightly)
 - Documented results with scatterplot and model evaluation
 - Enabled timestamped filenames for model prediction plots
