@@ -4,12 +4,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import joblib
 from sklearn.model_selection import train_test_split
+from datetime import datetime
 
 # Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, '../backend/app/data/nhanes_cleaned.csv')
 MODEL_PATH = os.path.join(BASE_DIR, '../backend/app/model/macro_predictor.pkl')
-OUTPUT_PATH = os.path.join(BASE_DIR, 'outputs/predicted_vs_actual_calories.png')
+
+# Get current date for versioned output
+
+timestamp_str = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')  # Example: 2025-06-03_14-22-35
+OUTPUT_DIR = os.path.join(BASE_DIR, 'outputs')
+OUTPUT_FILENAME = f'predicted_vs_actual_calories_{timestamp_str}.png'
+OUTPUT_PATH = os.path.join(OUTPUT_DIR, OUTPUT_FILENAME)
 
 # Load data
 df = pd.read_csv(DATA_PATH)
@@ -41,6 +48,6 @@ plt.legend()
 plt.tight_layout()
 
 # Save the plot
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 plt.savefig(OUTPUT_PATH)
 print(f"✅ Plot saved to {OUTPUT_PATH}")
