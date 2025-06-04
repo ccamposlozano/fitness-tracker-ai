@@ -112,6 +112,8 @@ This is a solo project built to sharpen my skills in:
 
 Feel free to connect or share feedback — I’d love to hear from you!
 
+---
+
 ## 📜 License
 
 MIT License – use it, fork it, build on it!
