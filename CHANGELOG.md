@@ -1,5 +1,40 @@
 # 📘 CHANGELOG – SmartFit AI-Powered Fitness Tracker
 
+## 2025-06-04
+
+### 🧠 Model Refinement – Log-Transform Reinstated + Random Forest Regression
+
+- Reverted to log-transforming `DR1TKCAL` to stabilize calorie distribution after histogram analysis
+- Restored RandomForestRegressor due to more consistent performance over HistGradientBoostingRegressor
+- GridSearchCV performed over `n_estimators` and `max_depth`
+- Final evaluation (using only demographic/body measures):
+  - R² Score: 0.07
+  - Cross-Validated R²: 0.08
+  - MSE: 146,309
+  - Best Params: `{'estimator__max_depth': 10, 'estimator__n_estimators': 200}`
+- Logged scatterplot of predicted vs actual calories (post log-transform correction)
+
+### ⚙️ Prediction Logic Enhancements (API)
+
+- Updated `/macro` route logic to include:
+  - **Inverse log-transform of predicted calories**
+  - **Activity level multipliers** based on PAL standards (e.g. 1.55 for “moderate”)
+  - **Goal-based calorie/protein adjustments**:
+    - `gain_muscle`: +10% kcal, +20% protein
+    - `lose_fat`: −15% kcal
+- Improved alignment of predicted targets with fitness goals and lifestyle
+
+### 🖥️ Frontend Integration
+
+- Dashboard now displays model-informed macro targets (calories, protein, carbs, fat) based on:
+  - Age, gender, weight, height
+  - Activity level
+  - Selected fitness goal
+- Example:
+  - User: 29 y/o male, 170 cm, 84 kg, moderate activity, goal = lose weight
+  - Predicted: ~3564 kcal (prior to future tuning or capping logic)
+
+
 ## 2025-06-03
 
 ### 🔬 Model Experimentation – Physical Activity Features
