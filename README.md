@@ -1,34 +1,53 @@
-SmartFit – AI-Powered Fitness Tracker 💪🧠
+# SmartFit – AI-Powered Fitness Tracker 💪🧠
 
-SmartFit is a full-stack fitness app designed to help users track food, calculate macros, and achieve their nutrition goals. Built with React and FastAPI, this solo project integrates AI to provide personalized macro recommendations based on user data.
+SmartFit is a full-stack fitness tracker that helps users log meals, calculate daily macros, and monitor their nutritional progress. Built with React, FastAPI, and a trained machine learning model, SmartFit offers personalized macro recommendations based on user data such as age, gender, weight, height, and activity level.
 
+---
 
- 🧩 Features
+## 🧩 Features
 
-- 🔐 User Authentication (Register/Login)
-- 🍎 Food Logging with calorie, protein, carbs, and fat tracking
-- 🤖 AI-Powered Macro Recommendation System**
-- 📊 Dashboard with personalized nutrition breakdowns
-- 🔎 Food Search using USDA FoodData Central API
-- ⚙️ FastAPI Backend + SQLite Database
-- 🧼 Clean UI with Tailwind CSS and React Context
+- 🔐 Secure user authentication (register/login)
+- 🍽️ Food logging with calories, protein, carbs, and fat
+- 🤖 AI-powered macro recommendation engine (ML model)
+- 📊 Dashboard with personalized macro targets and progress chart
+- 🔎 Food search via USDA FoodData Central API
+- 🧼 Clean, responsive UI built with Tailwind CSS and React Context
+- 📦 Fully functional FastAPI backend with SQLite and SQLAlchemy
 
+---
 
-🛠 Tech Stack
+## ⚙️ Tech Stack
 
-Frontend:
+**Frontend**:
 - React (TypeScript)
 - Tailwind CSS
 - Vite
 
-Backend:
-- FastAPI (Python)
+**Backend**:
+- FastAPI
 - SQLite + SQLAlchemy
 - Pydantic
-- USDA API
+- JWT Authentication
 
-AI/ML:
-- Trained model for macro predictions (coming soon)
+**Machine Learning**:
+- Python (Pandas, scikit-learn, joblib)
+- MultiOutputRegressor with RandomForestRegressor or HistGradientBoostingRegressor
+- Trained on real NHANES dietary data
+
+---
+
+## 🧠 Machine Learning Overview
+
+SmartFit includes a fully integrated machine learning pipeline:
+
+- 🔄 Data cleaning and preprocessing from NHANES datasets (SAS `.XPT` files)
+- 🧼 Outlier filtering (1000–4500 kcal/day)
+- 🧪 Trained multiple models with cross-validation and GridSearch
+- 🔁 Tried log-transformation and added physical activity as input features
+- 🧪 Final model: RandomForestRegressor with 4 input features (age, gender, height, weight)
+- 📉 R² ~ 0.07 on test set (limited by real-world data noise)
+
+Despite modest performance, the model demonstrates end-to-end deployment of a real ML predictor into a working product.
 
 ---
 
@@ -56,36 +75,40 @@ npm run dev
 smartfit-app/
 ├── backend/
 │   ├── app/
-│   ├── models/
-│   ├── routes/
-│   ├── schemas/
-│   └── main.py
+│   │   ├── data/
+│   │   ├── model/
+│   │   ├── routes/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── main.py
+│   ├── scripts/
+│   └── requirements.txt
 ├── frontend/
 │   ├── src/
-│   ├── components/
-│   ├── pages/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   └── api/
 │   └── App.tsx
+
 
 📈 Future Improvements
 
 🔍 Add image-based food recognition for automatic logging
-📱 Mobile responsiveness
-💬 AI chatbot for fitness tips
-🌍 Deploy to Vercel and Render (or other platforms)
-🙋‍♂️ About Me
+🧠 Improve ML accuracy with more features (e.g. dietary recall, mealtimes)
+💬 Add an AI chatbot for coaching and questions
+☁️ Deploy backend to Render and frontend to Vercel
+📱 Add full mobile responsiveness
 
-This is a solo personal project built to deepen my skills in:
+This is a solo project built to sharpen my skills in:
 
-Full-stack development
-Machine learning integration
-API design and authentication
-Feel free to connect or give feedback!
+Full-stack web development (React + FastAPI)
+Machine learning integration and deployment
+API design, authentication, and data engineering
+Real-world product thinking and user experience
+Feel free to connect or share feedback — I’d love to hear from you!
 
 📜 License
 
 MIT License – use it, fork it, build on it!
-
-
-
-
-
