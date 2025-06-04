@@ -60,18 +60,18 @@ git clone https://github.com/ccamposlozano/fitness-tracker-ai.git
 cd smartfit-app
 
 2. Setup the backend
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+- cd backend
+- python -m venv venv
+- source venv/bin/activate  # On Windows: venv\Scripts\activate
+- pip install -r requirements.txt
+- uvicorn app.main:app --reload
 
 3. Setup frontend
-cd frontend
-npm install
-npm run dev
+- cd frontend
+- npm install
+- npm run dev
 
-<pre> ``` 📦 Folder Structure
+<pre>  📦 Folder Structure
 smartfit-app/
 ├── backend/
 │   ├── app/
@@ -90,24 +90,24 @@ smartfit-app/
 │   │   ├── pages/
 │   │   ├── context/
 │   │   └── api/
-│   └── App.tsx ``` </pre>
+│   └── App.tsx </pre>
 
 
 📈 Future Improvements
 
-🔍 Add image-based food recognition for automatic logging
-🧠 Improve ML accuracy with more features (e.g. dietary recall, mealtimes)
-💬 Add an AI chatbot for coaching and questions
-☁️ Deploy backend to Render and frontend to Vercel
-📱 Add full mobile responsiveness
+- 🔍 Add image-based food recognition for automatic logging
+- 🧠 Improve ML accuracy with more features (e.g. dietary recall, mealtimes)
+- 💬 Add an AI chatbot for coaching and questions
+- ☁️ Deploy backend to Render and frontend to Vercel
+- 📱 Add full mobile responsiveness
 
 This is a solo project built to sharpen my skills in:
 
-Full-stack web development (React + FastAPI)
-Machine learning integration and deployment
-API design, authentication, and data engineering
-Real-world product thinking and user experience
-Feel free to connect or share feedback — I’d love to hear from you!
+- Full-stack web development (React + FastAPI)
+- Machine learning integration and deployment
+- API design, authentication, and data engineering
+- Real-world product thinking and user experience
+- Feel free to connect or share feedback — I’d love to hear from you!
 
 📜 License
 
