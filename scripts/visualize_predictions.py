@@ -22,7 +22,7 @@ OUTPUT_PATH = os.path.join(OUTPUT_DIR, OUTPUT_FILENAME)
 df = pd.read_csv(DATA_PATH)
 
 # Features and target
-X = df[['RIDAGEYR', 'RIAGENDR', 'BMXWT', 'BMXHT', 'PAD615', 'PAD645', 'PAD680']]
+X = df[['RIDAGEYR', 'RIAGENDR', 'BMXWT', 'BMXHT']]
 y = df[['DR1TKCAL']]
 
 # Train/test split
@@ -34,7 +34,7 @@ model = joblib.load(MODEL_PATH)
 # Predict
 y_pred = model.predict(X_test)
 y_true = y_test.values.flatten()
-y_pred_cal = y_pred[:, 0] if y_pred.ndim > 1 else y_pred
+y_pred_cal = np.exp(y_pred[:, 0]) if y_pred.ndim > 1 else np.exp(y_pred)
 
 # Create scatterplot
 plt.figure(figsize=(8, 6))

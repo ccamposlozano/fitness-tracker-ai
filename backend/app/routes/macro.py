@@ -3,6 +3,8 @@ import joblib
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
+import numpy as np
+
 
 from ..database import get_db
 from ..models.user import User
@@ -30,6 +32,8 @@ async def calculate_macros(
     
     # Predict
     y_pred = model.predict(X)[0]
+    # Inverse log-transform calories only
+    y_pred[0] = np.exp(y_pred[0])
     total_calories, protein, carbs, fat = map(int, y_pred)
     
     return MacroResponse(
