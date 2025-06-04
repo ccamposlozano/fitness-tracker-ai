@@ -100,6 +100,8 @@ smartfit-app/
 - 💬 Add an AI chatbot for coaching and questions
 - ☁️ Deploy backend to Render and frontend to Vercel
 - 📱 Add full mobile responsiveness
+- Add weight tracking feature and historical progress chart
+- Create demo user with pre-filled log data
 
 ---
 
