@@ -101,6 +101,8 @@ smartfit-app/
 - ☁️ Deploy backend to Render and frontend to Vercel
 - 📱 Add full mobile responsiveness
 
+---
+
 This is a solo project built to sharpen my skills in:
 
 - Full-stack web development (React + FastAPI)
