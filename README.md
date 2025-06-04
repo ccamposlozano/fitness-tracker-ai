@@ -71,7 +71,7 @@ cd frontend
 npm install
 npm run dev
 
-📦 Folder Structure
+<pre> ``` 📦 Folder Structure
 smartfit-app/
 ├── backend/
 │   ├── app/
@@ -90,7 +90,7 @@ smartfit-app/
 │   │   ├── pages/
 │   │   ├── context/
 │   │   └── api/
-│   └── App.tsx
+│   └── App.tsx ``` </pre>
 
 
 📈 Future Improvements
