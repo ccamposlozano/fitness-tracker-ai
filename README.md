@@ -51,7 +51,7 @@ Despite modest performance, the model demonstrates end-to-end deployment of a re
 
 ---
 
- 🚀 Getting Started
+ ## 🚀 Getting Started
 
  1. Clone the repository
 
@@ -93,7 +93,7 @@ smartfit-app/
 │   └── App.tsx </pre>
 
 
-📈 Future Improvements
+## 📈 Future Improvements
 
 - 🔍 Add image-based food recognition for automatic logging
 - 🧠 Improve ML accuracy with more features (e.g. dietary recall, mealtimes)
@@ -107,7 +107,8 @@ This is a solo project built to sharpen my skills in:
 - Machine learning integration and deployment
 - API design, authentication, and data engineering
 - Real-world product thinking and user experience
-- Feel free to connect or share feedback — I’d love to hear from you!
+
+Feel free to connect or share feedback — I’d love to hear from you!
 
 📜 License
 
