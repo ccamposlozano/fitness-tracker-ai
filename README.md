@@ -50,6 +50,10 @@ SmartFit integrates a complete ML pipeline into the product experience:
 * ✅ Final model: RandomForestRegressor using 4 input features (age, gender, weight, height)
 * 📊 R² ≈ 0.07 on test set (modest due to real-world variability)
 
+
+![Model Performance](frontend/src/assets/predicted_vs_actual_calories_2025-06-04_13-27-34.png)
+
+
 Although performance is limited by noisy input data, the project demonstrates **end-to-end ML deployment**, from preprocessing to API integration and real-time use in a full-stack app.
 
 ---
@@ -104,23 +108,11 @@ Update this to match your deployed or local backend as needed.
 
 ### Dashboard
 
-![Dashboard Screenshot](./screenshots/dashboard.png)
+![Dashboard Screenshot](frontend/src/assets/Screenshot2025-06-06at4.17.39PM.png)
 
 ### Food Logging
 
-![Food Log Screenshot](./screenshots/foodlog.png)
-
----
-
-## 📊 Model Performance
-
-### Final Model (after data cleaning)
-
-![Predicted vs Actual Calories (Final)](scripts/outputs/predicted_vs_actual_calories_2025-06-04_13-27-34.png)
-
-### Raw Data (before cleaning)
-
-![Predicted vs Actual Calories (Raw)](scripts/outputs/predicted_vs_actual_calories_rawdata.png)
+![Food Log Screenshot](frontend/src/assets/Screenshot2025-06-06at4.17.56PM.png)
 
 ---
 
