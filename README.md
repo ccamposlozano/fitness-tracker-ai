@@ -1,18 +1,18 @@
 # SmartFit – AI-Powered Fitness Tracker 💪🧠
 
-SmartFit is a full-stack fitness tracker that helps users log meals, calculate daily macros, and monitor their nutritional progress. Built with React, FastAPI, and a trained machine learning model, SmartFit offers personalized macro recommendations based on user data such as age, gender, weight, height, and activity level.
+**SmartFit** is a full-stack fitness tracker that helps users log meals, monitor progress, and receive personalized daily macro recommendations. Built with **React**, **FastAPI**, and a trained **machine learning model**, SmartFit offers tailored nutrition goals based on each user's age, gender, height, weight, and activity level.
 
 ---
 
-## 🧩 Features
+## 🔍 Features
 
 - 🔐 Secure user authentication (register/login)
-- 🍽️ Food logging with calories, protein, carbs, and fat
+- 🍽️ Food logging with calorie and macronutrient breakdowns
 - 🤖 AI-powered macro recommendation engine (ML model)
-- 📊 Dashboard with personalized macro targets and progress chart
+- 📊 Dashboard with real-time progress vs. daily targets
 - 🔎 Food search via USDA FoodData Central API
-- 🧼 Clean, responsive UI built with Tailwind CSS and React Context
-- 📦 Fully functional FastAPI backend with SQLite and SQLAlchemy
+- 🧼 Clean, responsive UI with Tailwind CSS and React Context
+- ⚙️ FastAPI backend with SQLite and SQLAlchemy
 
 ---
 
@@ -26,71 +26,82 @@ SmartFit is a full-stack fitness tracker that helps users log meals, calculate d
 **Backend**:
 - FastAPI
 - SQLite + SQLAlchemy
-- Pydantic
 - JWT Authentication
+- Pydantic
 
 **Machine Learning**:
 - Python (Pandas, scikit-learn, joblib)
-- MultiOutputRegressor with RandomForestRegressor or HistGradientBoostingRegressor
-- Trained on real NHANES dietary data
+- `MultiOutputRegressor` with `RandomForestRegressor` and `HistGradientBoostingRegressor`
+- Trained on real dietary data from the **NHANES** dataset
 
 ---
 
 ## 🧠 Machine Learning Overview
 
-SmartFit includes a fully integrated machine learning pipeline:
+SmartFit integrates a complete ML pipeline into the product experience:
 
-- 🔄 Data cleaning and preprocessing from NHANES datasets (SAS `.XPT` files)
-- 🧼 Outlier filtering (1000–4500 kcal/day)
-- 🧪 Trained multiple models with cross-validation and GridSearch
-- 🔁 Tried log-transformation and added physical activity as input features
-- 🧪 Final model: RandomForestRegressor with 4 input features (age, gender, height, weight)
-- 📉 R² ~ 0.07 on test set (limited by real-world data noise)
+- 🔄 Cleaned and preprocessed NHANES `.XPT` files (dietary survey data)
+- 📉 Removed calorie outliers (1000–4500 kcal/day) to reduce noise
+- 🧪 Performed model selection, cross-validation, and hyperparameter tuning
+- 🔁 Experimented with log-transformation and activity level features
+- ✅ Final model: RandomForestRegressor using 4 input features (age, gender, weight, height)
+- 📊 R² ≈ 0.07 on test set (modest due to real-world variability)
 
-Despite modest performance, the model demonstrates end-to-end deployment of a real ML predictor into a working product.
+Although performance is limited by noisy input data, the project demonstrates **end-to-end ML deployment**, from preprocessing to API integration and real-time use in a full-stack app.
 
 ---
 
- ## 🚀 Getting Started
+## 🚀 Getting Started
 
- 1. Clone the repository
+1. **Clone the repository**
 
-bash
 git clone https://github.com/ccamposlozano/fitness-tracker-ai.git
-cd smartfit-app
+cd fitness-tracker-ai
 
-2. Setup the backend
-- cd backend
-- python -m venv venv
+
+2. **Setup the backend**
+<pre> ```bash cd backend python -m venv venv source venv/bin/activate ``` </pre>
 - source venv/bin/activate  # On Windows: venv\Scripts\activate
 - pip install -r requirements.txt
 - uvicorn app.main:app --reload
 
-3. Setup frontend
+3. **Setup frontend**
 - cd frontend
 - npm install
 - npm run dev
 
-<pre>  📦 Folder Structure
-smartfit-app/
+## 📁 Project Structure
+<pre>  
+SmartFit/
 ├── backend/
-│   ├── app/
-│   │   ├── data/
-│   │   ├── model/
-│   │   ├── routes/
-│   │   ├── schemas/
-│   │   ├── services/
-│   │   ├── utils/
-│   │   └── main.py
-│   ├── scripts/
-│   └── requirements.txt
+│ ├── app/
+│ │ ├── data/ # NHANES dataset and cleaning scripts
+│ │ ├── model/ # Trained ML model (.pkl)
+│ │ ├── routes/ # API endpoints
+│ │ ├── schemas/ # Pydantic models
+│ │ ├── services/ # Macro calculations and logic
+│ │ ├── utils/ # Helper utilities
+│ │ └── main.py # FastAPI entry point
+│ └── requirements.txt
+│
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   └── api/
-│   └── App.tsx </pre>
+│ ├── src/
+│ │ ├── api/ # API functions (frontend-backend connection)
+│ │ ├── components/ # UI components
+│ │ ├── context/ # Global auth and app context
+│ │ ├── pages/ # Dashboard, Food Log, Auth pages
+│ │ └── main.tsx
+│ └── tailwind.config.js
+│
+├── scripts/ # ML preprocessing and analysis
+│ ├── clean_nhanes.py
+│ ├── visualize_predictions.py
+│ └── outputs/ # Prediction visualizations
+│
+├── README.md
+├── CHANGELOG.md
+└── structure.txt
+</pre>
 
 
 ## 📈 Future Improvements
