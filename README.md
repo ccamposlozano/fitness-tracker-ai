@@ -53,22 +53,30 @@ Although performance is limited by noisy input data, the project demonstrates **
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
+### 1. Clone the repository
 
+```bash
 git clone https://github.com/ccamposlozano/fitness-tracker-ai.git
 cd fitness-tracker-ai
+```
 
+### 2. Setup the backend
 
-2. **Setup the backend**
-<pre> ```bash cd backend python -m venv venv source venv/bin/activate ``` </pre>
-- source venv/bin/activate  # On Windows: venv\Scripts\activate
-- pip install -r requirements.txt
-- uvicorn app.main:app --reload
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-3. **Setup frontend**
-- cd frontend
-- npm install
-- npm run dev
+### 3. Setup the frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## 📁 Project Structure
 <pre>  
