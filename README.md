@@ -108,11 +108,11 @@ Update this to match your deployed or local backend as needed.
 
 ### Dashboard
 
-![Dashboard Screenshot](frontend/src/assets/Screenshot2025-06-06at4.17.39PM.png)
+![Dashboard Screenshot](frontend/src/assets/dashboard.png)
 
 ### Food Logging
 
-![Food Log Screenshot](frontend/src/assets/Screenshot2025-06-06at4.17.56PM.png)
+![Food Log Screenshot](frontend/src/assets/foodlog.png)
 
 ---
 
