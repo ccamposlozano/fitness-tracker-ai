@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { MacroProgressChart } from '@/components/MacroProgressChart';
 import { getLoggedFoods } from '../api';
-import { format, isToday } from 'date-fns';
+import { isToday } from 'date-fns';
 
 const MacroCard = ({ title, value, unit }: { title: string; value: number; unit: string }) => (
   <Card className="bg-gray-800 border-none">

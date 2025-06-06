@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
+//import { useAuth } from '../context/AuthContext';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Loader2, Plus, Pencil, Trash2 } from 'lucide-react';
+import { Loader2, Plus, Pencil } from 'lucide-react';
 import { FoodItem, LoggedFood, getLoggedFoods, searchFoods, logFood, updateFoodLog, deleteFoodLog } from '../api';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "../components/ui/dialog";
 import {
   DropdownMenu,
@@ -27,7 +26,7 @@ const isToday = (timestamp: string): boolean => {
 };
 
 export const FoodLog = () => {
-  const { user } = useAuth();
+  //const { user } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<FoodItem[]>([]);
   const [loggedFoods, setLoggedFoods] = useState<LoggedFood[]>([]);
