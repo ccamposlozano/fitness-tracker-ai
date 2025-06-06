@@ -85,10 +85,12 @@ SmartFit/
 │ ├── app/
 │ │ ├── data/ # NHANES dataset and cleaning scripts
 │ │ ├── model/ # Trained ML model (.pkl)
+│ │ ├── models/ # SQLAlchemy database models
 │ │ ├── routes/ # API endpoints
 │ │ ├── schemas/ # Pydantic models
 │ │ ├── services/ # Macro calculations and logic
 │ │ ├── utils/ # Helper utilities
+│ │ ├── database.py # SQLAlchemy engine and session
 │ │ └── main.py # FastAPI entry point
 │ └── requirements.txt
 │
@@ -97,7 +99,11 @@ SmartFit/
 │ │ ├── api/ # API functions (frontend-backend connection)
 │ │ ├── components/ # UI components
 │ │ ├── context/ # Global auth and app context
+│ │ ├── lib/ # Utility logic (e.g. helpers, constants)
 │ │ ├── pages/ # Dashboard, Food Log, Auth pages
+│ │ ├── types/ # TypeScript interfaces and types
+│ │ ├── App.css
+│ │ ├── index.css
 │ │ └── main.tsx
 │ └── tailwind.config.js
 │
@@ -114,24 +120,31 @@ SmartFit/
 
 ## 📈 Future Improvements
 
-- 🔍 Add image-based food recognition for automatic logging
-- 🧠 Improve ML accuracy with more features (e.g. dietary recall, mealtimes)
-- 💬 Add an AI chatbot for coaching and questions
-- ☁️ Deploy backend to Render and frontend to Vercel
-- 📱 Add full mobile responsiveness
-- Add weight tracking feature and historical progress chart
-- Create demo user with pre-filled log data
+- 📸 Image-based food recognition for automatic logging
+- ⚖️ Improve ML model with additional features (e.g., meal timing, past logs)
+- 🧠 Add AI chatbot for coaching or diet suggestions
+- 📱 Fully responsive mobile experience
+- 📉 Add weight tracking and macro history charts
+- 👤 Demo user with pre-populated logs for quick preview
 
 ---
 
-This is a solo project built to sharpen my skills in:
+## 🎯 Why I Built This
+
+This solo project was created to sharpen my skills in:
 
 - Full-stack web development (React + FastAPI)
-- Machine learning integration and deployment
-- API design, authentication, and data engineering
-- Real-world product thinking and user experience
+- Machine learning model deployment in production
+- REST API design and data engineering
+- UI/UX and product thinking from idea to deployment
 
-Feel free to connect or share feedback — I’d love to hear from you!
+It combines my passion for fitness and AI to deliver a real-world solution that helps users stay on track with their goals.
+
+---
+
+##📬 Feedback
+
+If you have ideas, suggestions, or just want to connect — feel free to reach out or open an issue. I'm always open to feedback and collaboration!
 
 ---
 
