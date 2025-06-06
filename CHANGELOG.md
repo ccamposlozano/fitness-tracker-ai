@@ -1,5 +1,29 @@
 # 📘 CHANGELOG – SmartFit AI-Powered Fitness Tracker
 
+## 2025-06-06
+
+### 📄 Documentation & README Cleanup
+
+- Refined `README.md` for clarity
+  - Added accurate backend project structure (including `models/` and `database.py`)
+  - Added accurate frontend project structure (`assets/`, `lib/`, `types/`, etc.)
+  - Improved formatting of `Getting Started` section
+  - Cleaned up feature list and tech stack
+
+
+## 2025-06-05
+
+### ☁️ Deployment
+
+- Successfully deployed the **FastAPI backend** to Render
+  - Verified production routes (`/macro`, `/auth`, `/user`) are operational
+  - Enabled CORS configuration for frontend access
+
+- Deployed the **React + Vite frontend** to Vercel
+  - Pointed API base URL to deployed backend
+  - Confirmed functionality for food logging, macro recommendation, and dashboard chart
+
+
 ## 2025-06-04
 
 ### 🧠 Model Refinement – Log-Transform Reinstated + Random Forest Regression

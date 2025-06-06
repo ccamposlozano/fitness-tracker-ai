@@ -6,33 +6,36 @@
 
 ## 🔍 Features
 
-- 🔐 Secure user authentication (register/login)
-- 🍽️ Food logging with calorie and macronutrient breakdowns
-- 🤖 AI-powered macro recommendation engine (ML model)
-- 📊 Dashboard with real-time progress vs. daily targets
-- 🔎 Food search via USDA FoodData Central API
-- 🧼 Clean, responsive UI with Tailwind CSS and React Context
-- ⚙️ FastAPI backend with SQLite and SQLAlchemy
+* 🔐 Secure user authentication (register/login)
+* 🍽️ Food logging with calorie and macronutrient breakdowns
+* 🤖 AI-powered macro recommendation engine (ML model)
+* 📊 Dashboard with real-time progress vs. daily targets
+* 🔎 Food search via USDA FoodData Central API
+* 🧼 Clean, responsive UI with Tailwind CSS and React Context
+* ⚙️ FastAPI backend with SQLite and SQLAlchemy
 
 ---
 
 ## ⚙️ Tech Stack
 
 **Frontend**:
-- React (TypeScript)
-- Tailwind CSS
-- Vite
+
+* React (TypeScript)
+* Tailwind CSS
+* Vite
 
 **Backend**:
-- FastAPI
-- SQLite + SQLAlchemy
-- JWT Authentication
-- Pydantic
+
+* FastAPI
+* SQLite + SQLAlchemy
+* JWT Authentication
+* Pydantic
 
 **Machine Learning**:
-- Python (Pandas, scikit-learn, joblib)
-- `MultiOutputRegressor` with `RandomForestRegressor` and `HistGradientBoostingRegressor`
-- Trained on real dietary data from the **NHANES** dataset
+
+* Python (Pandas, scikit-learn, joblib)
+* `MultiOutputRegressor` with `RandomForestRegressor` and `HistGradientBoostingRegressor`
+* Trained on real dietary data from the **NHANES** dataset
 
 ---
 
@@ -40,12 +43,12 @@
 
 SmartFit integrates a complete ML pipeline into the product experience:
 
-- 🔄 Cleaned and preprocessed NHANES `.XPT` files (dietary survey data)
-- 📉 Removed calorie outliers (1000–4500 kcal/day) to reduce noise
-- 🧪 Performed model selection, cross-validation, and hyperparameter tuning
-- 🔁 Experimented with log-transformation and activity level features
-- ✅ Final model: RandomForestRegressor using 4 input features (age, gender, weight, height)
-- 📊 R² ≈ 0.07 on test set (modest due to real-world variability)
+* 🔄 Cleaned and preprocessed NHANES `.XPT` files (dietary survey data)
+* 📉 Removed calorie outliers (1000–4500 kcal/day) to reduce noise
+* 🧪 Performed model selection, cross-validation, and hyperparameter tuning
+* 🔁 Experimented with log-transformation and activity level features
+* ✅ Final model: RandomForestRegressor using 4 input features (age, gender, weight, height)
+* 📊 R² ≈ 0.07 on test set (modest due to real-world variability)
 
 Although performance is limited by noisy input data, the project demonstrates **end-to-end ML deployment**, from preprocessing to API integration and real-time use in a full-stack app.
 
@@ -78,7 +81,51 @@ npm install
 npm run dev
 ```
 
+### 4. Set API base URL for frontend
+
+In `frontend/src/api/index.ts`, configure your backend API URL:
+
+```ts
+const API_URL = 'https://smartfit-backend.onrender.com';
+```
+
+Update this to match your deployed or local backend as needed.
+
+---
+
+## 🌐 Live Demo
+
+🔗 [Try the App](https://fitness-tracker-ai-gamma.vercel.app/)
+*(Hosted on Vercel)*
+
+---
+
+## 🖼️ Preview
+
+### Dashboard
+
+![Dashboard Screenshot](./screenshots/dashboard.png)
+
+### Food Logging
+
+![Food Log Screenshot](./screenshots/foodlog.png)
+
+---
+
+## 📊 Model Performance
+
+### Final Model (after data cleaning)
+
+![Predicted vs Actual Calories (Final)](./scripts/outputs/predicted_vs_actual_calories_2025-06-04_13-27-34.png)
+
+### Raw Data (before cleaning)
+
+![Predicted vs Actual Calories (Raw)](./scripts/outputs/predicted_vs_actual_calories_rawdata.png)
+
+---
+
 ## 📁 Project Structure
+
 <pre>  
 SmartFit/
 ├── backend/
@@ -117,15 +164,16 @@ SmartFit/
 └── structure.txt
 </pre>
 
+---
 
 ## 📈 Future Improvements
 
-- 📸 Image-based food recognition for automatic logging
-- ⚖️ Improve ML model with additional features (e.g., meal timing, past logs)
-- 🧠 Add AI chatbot for coaching or diet suggestions
-- 📱 Fully responsive mobile experience
-- 📉 Add weight tracking and macro history charts
-- 👤 Demo user with pre-populated logs for quick preview
+* 📸 Image-based food recognition for automatic logging
+* ⚖️ Improve ML model with additional features (e.g., meal timing, past logs)
+* 🧠 Add AI chatbot for coaching or diet suggestions
+* 📱 Fully responsive mobile experience
+* 📉 Add weight tracking and macro history charts
+* 👤 Demo user with pre-populated logs for quick preview
 
 ---
 
@@ -133,10 +181,10 @@ SmartFit/
 
 This solo project was created to sharpen my skills in:
 
-- Full-stack web development (React + FastAPI)
-- Machine learning model deployment in production
-- REST API design and data engineering
-- UI/UX and product thinking from idea to deployment
+* Full-stack web development (React + FastAPI)
+* Machine learning model deployment in production
+* REST API design and data engineering
+* UI/UX and product thinking from idea to deployment
 
 It combines my passion for fitness and AI to deliver a real-world solution that helps users stay on track with their goals.
 
