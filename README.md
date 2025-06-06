@@ -116,11 +116,11 @@ Update this to match your deployed or local backend as needed.
 
 ### Final Model (after data cleaning)
 
-![Predicted vs Actual Calories (Final)](./scripts/outputs/predicted_vs_actual_calories_2025-06-04_13-27-34.png)
+![Predicted vs Actual Calories (Final)](scripts/outputs/predicted_vs_actual_calories_2025-06-04_13-27-34.png)
 
 ### Raw Data (before cleaning)
 
-![Predicted vs Actual Calories (Raw)](./scripts/outputs/predicted_vs_actual_calories_rawdata.png)
+![Predicted vs Actual Calories (Raw)](scripts/outputs/predicted_vs_actual_calories_rawdata.png)
 
 ---
 
