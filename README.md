@@ -142,7 +142,7 @@ It combines my passion for fitness and AI to deliver a real-world solution that 
 
 ---
 
-##📬 Feedback
+## 📬 Feedback
 
 If you have ideas, suggestions, or just want to connect — feel free to reach out or open an issue. I'm always open to feedback and collaboration!
 
