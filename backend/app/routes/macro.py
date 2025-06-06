@@ -1,5 +1,6 @@
 import os
 import joblib
+import pandas as pd
 import numpy as np
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
@@ -26,7 +27,12 @@ async def calculate_macros(
     gender_num = 1 if current_user.gender.lower() == "male" else 2
 
     # Input: [age, gender, weight, height]
-    X = [[current_user.age, gender_num, current_user.weight, current_user.height]]
+    X = pd.DataFrame([{
+        'RIDAGEYR': current_user.age,
+        'RIAGENDR': gender_num,
+        'BMXWT': current_user.weight,
+        'BMXHT': current_user.height
+    }])
 
     # Predict
     y_pred = model.predict(X)[0]

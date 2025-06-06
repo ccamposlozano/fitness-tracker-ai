@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { UserCreate, Token, User, MacroResponse } from '../types';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://smartfit-backend.onrender.com';
 
 const api = axios.create({
   baseURL: API_URL,
