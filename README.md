@@ -51,8 +51,8 @@ SmartFit integrates a complete ML pipeline into the product experience:
 * 📊 R² ≈ 0.07 on test set (modest due to real-world variability)
 
 
-### Predicted vs Actual Calories – Final Model
-![Model Performance](frontend/src/assets/predicted_vs_actual_calories_2025-06-04_13-27-34.png)
+Predicted vs Actual Calories – Final Model
+<img src="frontend/src/assets/predicted_vs_actual_calories_2025-06-04_13-27-34.png" alt="Predicted vs Actual Calories – Final Model" width="700"/>
 
 
 Although performance is limited by noisy input data, the project demonstrates **end-to-end ML deployment**, from preprocessing to API integration and real-time use in a full-stack app.
