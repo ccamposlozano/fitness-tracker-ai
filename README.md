@@ -103,6 +103,9 @@ Update this to match your deployed or local backend as needed.
 🔗 [Try the App](https://fitness-tracker-ai-gamma.vercel.app/)
 *(Hosted on Vercel)*
 
+⚠️ **Note:** The backend runs on Render’s free tier and may take **20–60 seconds** to wake up after inactivity.  
+Please be patient if the app takes a moment to load
+
 ---
 
 ## 🖼️ Preview
