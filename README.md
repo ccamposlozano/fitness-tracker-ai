@@ -6,7 +6,7 @@
 
 ## 🔍 Features
 
-* 🔐 Secure user authentication (register/login)
+* 🔐 Secure user authentication (register/login) using JWT (JSON Web Tokens)
 * 🍽️ Food logging with calorie and macronutrient breakdowns
 * 🤖 AI-powered macro recommendation engine (ML model)
 * 📊 Dashboard with real-time progress vs. daily targets
@@ -28,7 +28,7 @@
 
 * FastAPI
 * SQLite + SQLAlchemy
-* JWT Authentication
+* JWT-based authentication with OAuth2
 * Pydantic
 
 **Machine Learning**:
